@@ -1,0 +1,22 @@
+{
+  "name": "laterooms-kata",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Safder Iqbal <safder.iqbal@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.6",
+    "jquery": "^2.2.4"
+  }
+}

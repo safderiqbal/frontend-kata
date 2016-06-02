@@ -1,0 +1,27 @@
+<!doctype html>
+<html data-ng-app="laterooms-kata">
+    <head>
+        <title>LateRooms Front-end Kata</title>
+        <link rel="stylesheet" href="../bower_components/angular/angular-csp.css">
+        <link rel="stylesheet" href="styles/main.css">
+    </head>
+    <body data-ng-controller="MainController as main">
+        <div id="container">
+            <div class="search-area">
+            </div>
+            <div class="results-view">
+                <ul>
+                    <li data-ng-repeat="hotel in main.data">
+                        Name: {{ hotel.Name }} StarRating: {{ hotel.StarRating }} Facilities: {{ hotel.Facilities }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/angular/angular.min.js"></script>
+
+        <script src="scripts/app.module.js"></script>
+        <script src="scripts/controllers/main.controller.js"></script>
+    </body>
+</html>

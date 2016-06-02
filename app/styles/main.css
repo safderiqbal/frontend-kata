@@ -1,0 +1,13 @@
+body {
+    padding: 0;
+}
+
+#container {
+    background: orange;
+    height: 80%;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
