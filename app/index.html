@@ -8,13 +8,12 @@
     <body data-ng-controller="MainController as main">
         <div id="container">
             <div class="search-area">
+                <input type="search" data-ng-model="main.searchTerm" placeholder="Enter a hotel facility..." />
             </div>
             <div class="results-view">
-                <ul>
-                    <li data-ng-repeat="hotel in main.data">
-                        Name: {{ hotel.Name }} StarRating: {{ hotel.StarRating }} Facilities: {{ hotel.Facilities }}
-                    </li>
-                </ul>
+                <div data-ng-repeat="hotel in main.data">
+                    <div>Name: {{ hotel.Name }}</div><div>StarRating: {{ hotel.StarRating }}</div><div>Facilities: {{ hotel.Facilities }}</div>
+                </div>
             </div>
         </div>
 

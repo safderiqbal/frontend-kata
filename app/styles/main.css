@@ -4,10 +4,25 @@ body {
 
 #container {
     background: orange;
-    height: 80%;
-    width: 80%;
+    height: 60%;
+    width: 40%;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+}
+
+.search-area {
+    padding-bottom: 15px;
+    width: 100%;
+}
+
+.search-area input {
+    width: 100%;
+}
+
+.results-view {
+    flex-direction: row;
 }
