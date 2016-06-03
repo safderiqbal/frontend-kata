@@ -2,25 +2,41 @@
 <html data-ng-app="laterooms-kata">
     <head>
         <title>LateRooms Front-end Kata</title>
-        <link rel="stylesheet" href="../bower_components/angular/angular-csp.css">
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
         <link rel="stylesheet" href="styles/main.css">
     </head>
     <body data-ng-controller="MainController as main">
         <div id="container">
             <div class="search-area">
-                <input type="search" data-ng-model="main.searchTerm" placeholder="Enter a hotel facility..." />
+                <input type="search" data-ng-model="main.searchTerm.Facilities" placeholder="Enter a hotel facility..." />
             </div>
-            <div class="results-view">
-                <div data-ng-repeat="hotel in main.data">
-                    <div>Name: {{ hotel.Name }}</div><div>StarRating: {{ hotel.StarRating }}</div><div>Facilities: {{ hotel.Facilities }}</div>
-                </div>
-            </div>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Star Rating</td>
+                        <td>Facilities</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-ng-repeat="hotel in main.data | orderBy:'StarRating':main.sortDescending | facilities:main.searchTerm">
+                        <td>{{ hotel.Name }}</td>
+                        <td>{{ hotel.StarRating }}</td>
+                        <td data-ng-if="hotel.Facilities.length !== 0">
+                            <span data-ng-repeat="facility in hotel.Facilities track by $index">{{ facility }}{{$last ? '' : ($index == hotel.Facilities.length - 2) ? ' and ' : ', '}}</span>
+                        </td>
+                        <td data-ng-if="hotel.Facilities.length === 0">There are no facilities</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <script src="../bower_components/jquery/dist/jquery.js"></script>
         <script src="../bower_components/angular/angular.min.js"></script>
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
         <script src="scripts/app.module.js"></script>
         <script src="scripts/controllers/main.controller.js"></script>
+        <script src="scripts/filters/facility-filter.js"></script>
     </body>
 </html>

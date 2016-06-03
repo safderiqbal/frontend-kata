@@ -21,7 +21,15 @@
                 }
             ];
 
+        function filter(item) {
+            return item.Facilities
+        }
+
         vm.data = rawData;
+        vm.searchTerm = {
+            'Facilities': ''
+        };
+        vm.sortAscending = false;
     }
 
     angular
