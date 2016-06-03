@@ -21,15 +21,15 @@
                 }
             ];
 
-        function filter(item) {
-            return item.Facilities
+        function setDefaultValues(data) {
+            vm.data = data;
+            vm.searchTerm = {
+                'Facilities': ''
+            };
+            vm.sortDescending = false;
         }
 
-        vm.data = rawData;
-        vm.searchTerm = {
-            'Facilities': ''
-        };
-        vm.sortAscending = false;
+        setDefaultValues(rawData);
     }
 
     angular

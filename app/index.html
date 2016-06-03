@@ -14,7 +14,11 @@
                 <thead>
                     <tr>
                         <td>Name</td>
-                        <td>Star Rating</td>
+                        <td>
+                            <a href="" data-ng-click="main.sortDescending = !main.sortDescending">Star Rating</a>
+                            <span data-ng-show="!main.sortDescending">&#x25B2;</span>
+                            <span data-ng-show="main.sortDescending">&#x25BC;</span>
+                        </td>
                         <td>Facilities</td>
                     </tr>
                 </thead>
